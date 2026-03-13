@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/one-acre-fund/terraform-aws-vpc/compare/v1.0.6...v1.0.7) (2026-03-13)
+
+
+### Bug Fixes
+
+* fixed docs.yml ([367c748](https://github.com/one-acre-fund/terraform-aws-vpc/commit/367c748033b54086028b33bf01fcd90381f3e373))
+
 ## [1.0.6](https://github.com/one-acre-fund/terraform-aws-vpc/compare/v1.0.5...v1.0.6) (2026-03-13)
 
 
