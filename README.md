@@ -1,7 +1,6 @@
 ﻿# terraform-aws-vpc
 
 A reusable VPC module with optional NAT gateways, flow logs, and tagging.
-
 ## Variables
 
 | Name               | Description |

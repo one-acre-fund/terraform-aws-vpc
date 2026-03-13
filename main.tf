@@ -1,4 +1,4 @@
-﻿##############################################
+##############################################
 # VPC
 ##############################################
 resource "aws_vpc" "this" {
@@ -52,8 +52,8 @@ resource "aws_subnet" "private" {
   availability_zone = var.azs[count.index]
 
   tags = merge(local.common_tags, {
-    Name                              = "snet-pri-${var.environment}-${var.azs[count.index]}-${count.index + 1}"
-    Tier                              = "private"
+    Name = "snet-pri-${var.environment}-${var.azs[count.index]}-${count.index + 1}"
+    Tier = "private"
   })
 }
 
