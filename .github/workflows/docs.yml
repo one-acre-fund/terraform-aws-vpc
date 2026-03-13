@@ -9,7 +9,7 @@ on:
 jobs:
   docs:
     name: terraform-docs
-    runs-on: ubuntu-latest #will change once our AWS ready runners are available
+    runs-on: ubuntu-latest
     permissions:
       contents: write
 
@@ -25,5 +25,4 @@ jobs:
           output-method: inject
           git-push: "true"
           git-commit-message: "docs: auto-update README via terraform-docs [skip ci]"
-          recursive: "true"
-          recursive-path: modules
+          # Removed recursive and recursive-path to avoid errors if modules folder doesn't exist
