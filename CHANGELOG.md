@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/one-acre-fund/terraform-aws-vpc/compare/v1.0.1...v1.0.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* added gitignore and terraform validation ([eb083f6](https://github.com/one-acre-fund/terraform-aws-vpc/commit/eb083f6e8534b8dac1e3144f94992d08bcf1a271))
+
 ## [1.0.1](https://github.com/one-acre-fund/terraform-aws-vpc/compare/v1.0.0...v1.0.1) (2026-03-13)
 
 
