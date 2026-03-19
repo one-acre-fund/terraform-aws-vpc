@@ -1,6 +1,4 @@
 locals {
-  vpc_name = "vpc-${var.environment}"
-
   common_tags = merge(var.tags, {
     Env         = var.environment
     Application = var.application

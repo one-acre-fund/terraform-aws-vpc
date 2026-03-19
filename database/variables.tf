@@ -38,11 +38,6 @@ variable "module" {
 
 
 #Database variables
-variable "db_name" {
-  description = ""
-  type        = string
-  default     = ""
-}
 
 variable "engine" {
   description = ""
@@ -65,12 +60,6 @@ variable "instance_class" {
   description = ""
   type        = string
   default     = "db.t3.micro"
-}
-
-variable "db_version" {
-  description = ""
-  type        = string
-  default     = "15.00.4312.2.v1"
 }
 
 variable "subnet_ids" {

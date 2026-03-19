@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source = "../.."
+  source = "../../vpc"
 
   environment = var.environment
   application = var.application
