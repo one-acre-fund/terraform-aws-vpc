@@ -27,6 +27,7 @@ resource "aws_internet_gateway" "this" {
 # Public Subnets
 ##############################################
 resource "aws_subnet" "public" {
+  # checkov:skip=CKV_AWS_130: Public subnet requires public IPs
   count = length(var.public_subnet_cidrs)
 
   vpc_id                  = aws_vpc.this.id
@@ -146,7 +147,7 @@ resource "aws_route_table_association" "private" {
 resource "aws_cloudwatch_log_group" "flow_logs" {
   count             = var.enable_flow_logs ? 1 : 0
   name              = "/aws/vpc/${var.environment}/flow-logs"
-  retention_in_days = var.flow_logs_retention_days
+  retention_in_days = 365
 
   tags = local.common_tags
 }
