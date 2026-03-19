@@ -200,3 +200,31 @@ resource "aws_flow_log" "this" {
     Name = "flow-logs-${var.environment}"
   })
 }
+
+#database resources
+
+resource "aws_db_instance" "this" {
+  allocated_storage           = var.storage
+  identifier                  = var.db_identifier
+  db_subnet_group_name        = aws_db_subnet_group.this.name
+  engine                      = var.engine
+  engine_version              = var.engine_version
+  license_model               = var.license_model
+  instance_class              = var.instance_class
+  username                    = var.username
+  skip_final_snapshot         = var.skip_final_snapshot
+  manage_master_user_password = var.manage_master_user_password
+  tags = merge(local.common_tags, {
+    Name = var.db_identifier
+  })
+}
+
+
+resource "aws_db_subnet_group" "this" {
+  name       = var.db_subnet_group_name
+  subnet_ids = var.subnet_ids
+
+  tags = merge(local.common_tags, {
+    Name = "My DB subnet group"
+  })
+}
