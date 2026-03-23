@@ -65,7 +65,7 @@ resource "aws_eip" "nat" {
   domain = "vpc"
 
   tags = merge(local.common_tags, {
-    Name = "nat-${var.environment}-${var.azs[count.index % length(var.azs)]}"
+    Name = "eip-${var.environment}-nat-${count.index + 1}"
   })
 
   depends_on = [aws_internet_gateway.this]
