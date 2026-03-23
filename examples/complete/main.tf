@@ -23,9 +23,10 @@ module "vpc" {
   managed_by  = var.managed_by
   vpc_cidr    = var.vpc_cidr
 
-  azs                  = var.azs
-  public_subnet_cidrs  = var.public_subnet_cidrs
-  private_subnet_cidrs = var.private_subnet_cidrs
+  azs                    = var.azs
+  public_subnet_cidrs    = var.public_subnet_cidrs
+  private_subnet_cidrs   = var.private_subnet_cidrs
+  private_subnet_purpose = var.private_subnet_purpose
 
   enable_nat_gateway = true
   single_nat_gateway = false # complete example uses multi NAT
