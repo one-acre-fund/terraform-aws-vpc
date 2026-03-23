@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/one-acre-fund/terraform-aws-module/compare/v1.5.3...v1.5.4) (2026-03-23)
+
+
+### Bug Fixes
+
+* Added subnet purpose tagging ([7a1ec48](https://github.com/one-acre-fund/terraform-aws-module/commit/7a1ec484abee4d79af3df8bf8f162acc178132fb))
+
 ## [1.5.3](https://github.com/one-acre-fund/terraform-aws-module/compare/v1.5.2...v1.5.3) (2026-03-23)
 
 
