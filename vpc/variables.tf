@@ -27,7 +27,6 @@ variable "managed_by" {
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
-  default     = "172.20.0.0/16"
 }
 
 variable "azs" {
@@ -43,6 +42,12 @@ variable "public_subnet_cidrs" {
 
 variable "private_subnet_cidrs" {
   description = "CIDR blocks for private subnets"
+  type        = list(string)
+  default     = []
+}
+
+variable "private_subnet_purpose" {
+  description = "Purpose tag for each private subnet (must match order of private_subnet_cidrs)"
   type        = list(string)
   default     = []
 }

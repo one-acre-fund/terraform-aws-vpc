@@ -58,6 +58,23 @@ resource "aws_subnet" "private" {
 }
 
 ##############################################
+# Private Subnets
+##############################################
+resource "aws_subnet" "private" {
+  count = length(var.private_subnet_cidrs)
+
+  vpc_id            = aws_vpc.this.id
+  cidr_block        = var.private_subnet_cidrs[count.index]
+  availability_zone = var.azs[count.index % length(var.azs)]
+
+  tags = merge(local.common_tags, {
+    Name    = "snet-pri-${var.environment}-${var.azs[count.index % length(var.azs)]}-${count.index + 1}"
+    Tier    = "private"
+    Purpose = length(var.private_subnet_purpose) > 0 ? var.private_subnet_purpose[count.index] : ""
+  })
+}
+
+##############################################
 # Elastic IPs for NAT Gateways
 ##############################################
 resource "aws_eip" "nat" {
